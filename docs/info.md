@@ -9,12 +9,10 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
-
+This is just the template
 ## How to test
 
-Explain how to use your project
-
+No Meaningful Behavior. All outputs should be low
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+None specific
