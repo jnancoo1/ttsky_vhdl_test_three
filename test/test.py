@@ -4,25 +4,17 @@ from cocotb.triggers import ClockCycles
 
 @cocotb.test()
 async def test_project(dut):
-    dut._log.info("Start")
-
-    # Clock
     clock = Clock(dut.clk, 10, unit="us")
     cocotb.start_soon(clock.start())
 
-    # Reset
     dut.rst_n.value = 0
     dut.ena.value = 1
-    dut.ui_in.value = 0
-    dut.uio_in.value = 0
     await ClockCycles(dut.clk, 10)
     dut.rst_n.value = 1
 
-    # Apply inputs and check outputs
-    dut.ui_in.value = 20
-    dut.uio_in.value = 30
+    # A=1 B=1 Cin=0
+    dut.ui_in.value = 0b00000011
     await ClockCycles(dut.clk, 1)
 
-    expected = 50
-    # Convert LogicArray to integer
-    assert dut.uo_out.value.integer == expected
+    # sum=0 carry=1 -> 00000001
+    assert dut.uo_out.value.integer == 1
