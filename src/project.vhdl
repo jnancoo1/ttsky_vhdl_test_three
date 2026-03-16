@@ -24,6 +24,6 @@ begin
    a2 <= ui_in(0) and ui_in(1);  
    a3 <= a1 and ui_in(2);  
    uo_out(0) <= a2 or a3;  
-   uo_out(1) <= a1 xor u1_in(2);  
+   uo_out(1) <= a1 xor ui_in(2);  
 
 end structural;  
