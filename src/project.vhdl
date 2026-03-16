@@ -15,11 +15,15 @@ entity tt_um_example is
     );
 end tt_um_example;
 
-architecture Behavioral of tt_um_example is
-begin
+architecture structural of tt_um_example is  
 
-    uo_out <= std_logic_vector(unsigned(ui_in) + unsigned(uio_in));
-    uio_out <= "00000000";
-    uio_oe <= "00000000";
+   signal a1, a2, a3: std_logic;  
 
-end Behavioral;
+begin  
+   a1 <= u1_in(0) xor u1_in(1);  
+   a2 <= u1_in(0) and u1_in(1);  
+   a3 <= a1 and u1_in(2);  
+   uo_out(0) <= a2 or a3;  
+   uo_out(1) <= a1 xor u1_in(2);  
+
+end structural;  
