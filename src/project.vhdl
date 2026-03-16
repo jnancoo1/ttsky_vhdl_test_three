@@ -20,9 +20,9 @@ architecture structural of tt_um_example is
    signal a1, a2, a3: std_logic;  
 
 begin  
-   a1 <= u1_in(0) xor u1_in(1);  
-   a2 <= u1_in(0) and u1_in(1);  
-   a3 <= a1 and u1_in(2);  
+   a1 <= ui_in(0) xor ui_in(1);  
+   a2 <= ui_in(0) and ui_in(1);  
+   a3 <= a1 and ui_in(2);  
    uo_out(0) <= a2 or a3;  
    uo_out(1) <= a1 xor u1_in(2);  
 
