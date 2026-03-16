@@ -17,7 +17,9 @@ end tt_um_example;
 
 architecture structural of tt_um_example is  
 
-   signal a1, a2, a3: std_logic;  
+   signal a1, a2, a3: std_logic;
+   signal unused_inputs : std_logic_vector(4 downto 0);
+
 
 begin  
    a1 <= ui_in(0) xor ui_in(1);  
@@ -25,5 +27,11 @@ begin
    a3 <= a1 and ui_in(2);  
    uo_out(0) <= a2 or a3;  
    uo_out(1) <= a1 xor ui_in(2);  
+
+   uo_out(7 downto 2) <= (others => '0');
+   uio_out <= (others => '0');
+   uio_oe  <= (others => '0');
+   unused_inputs <= ui_in(7 downto 3);
+
 
 end structural;  
