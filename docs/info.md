@@ -9,10 +9,10 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-This is just the template
+nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
 ## How to test
 
-No Meaningful Behavior. All outputs should be low
+mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
 ## External hardware
 
 None specific
